@@ -22,5 +22,34 @@ def output_ports():
         print(f"{i}: {midiout.getPortName(i)}")
 
 
-output_ports()
-read_spacemouse()
+def button_0(state, buttons, pressed_buttons):
+    print("Button 0 pressed:", pressed_buttons)
+
+
+def button_1(state, buttons, pressed_buttons):
+    print("Button 1 pressed", pressed_buttons)
+
+
+def button_0_1(state, buttons, pressed_buttons):
+    print("Both buttons pressed:", pressed_buttons)
+
+
+def someButton(state, buttons):
+    print("Some button event")
+
+
+def callback():
+    button_arr = [pyspacemouse.ButtonCallback([0], button_0),
+                  pyspacemouse.ButtonCallback([1], button_1),]
+
+    success = pyspacemouse.open(dof_callback=pyspacemouse.print_state,
+                                button_callback_arr=button_arr)
+    if success:
+        while True:
+            pyspacemouse.read()
+            time.sleep(0.01)
+
+
+callback()
+# output_ports()
+# read_spacemouse()
