@@ -62,47 +62,52 @@ def yaw(state, axis):
     print(f"Yaw: {axis}")
 
 
+# Ignore any inputs below this value:
+# 0.8 makes it possible to send any axis without (much) noise from the other 5.
+sensitivity = 0.08
+
+
 def main():
     """Listen to the 3d mouse and fire various fns."""
     button_arr = [pyspacemouse.ButtonCallback([0], button_0),
                   pyspacemouse.ButtonCallback([1], button_1),]
     axis_arr = [pyspacemouse.DofCallback("x",
                                          x_axis,
-                                         0.01,
+                                         0.0001,
                                          x_axis,
-                                         0.0001),
+                                         sensitivity),
                 pyspacemouse.DofCallback("y",
                                          y_axis,
-                                         0.01,
+                                         0.0001,
                                          y_axis,
-                                         0.0001),
+                                         sensitivity),
                 pyspacemouse.DofCallback("z",
                                          z_axis,
-                                         0.01,
+                                         0.0001,
                                          z_axis,
-                                         0.0001),
+                                         sensitivity),
                 pyspacemouse.DofCallback("roll",
                                          roll,
-                                         0.01,
+                                         0.0001,
                                          roll,
-                                         0.0001),
+                                         sensitivity),
                 pyspacemouse.DofCallback("pitch",
                                          pitch,
-                                         0.01,
+                                         0.0001,
                                          pitch,
-                                         0.0001),
+                                         sensitivity),
                 pyspacemouse.DofCallback("yaw",
                                          yaw,
-                                         0.01,
+                                         0.0001,
                                          yaw,
-                                         0.0001)]
+                                         sensitivity)]
 
     success = pyspacemouse.open(button_callback_arr=button_arr,
                                 dof_callback_arr=axis_arr)
     if success:
         while True:
             pyspacemouse.read()
-            time.sleep(0.01)
+            time.sleep(0.001)
 
 
 main()
