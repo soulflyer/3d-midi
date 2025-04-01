@@ -1,5 +1,4 @@
-"""Functions to translate 3d mouse input to midi."""
-import rtmidi
+"""Functions to read 3d mouse input."""
 import pyspacemouse
 import time
 import event

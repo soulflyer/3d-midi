@@ -11,11 +11,13 @@ def button_0(state, buttons, pressed_buttons):
 
 def button_1(state, buttons, pressed_buttons):
     """Event fired when button 1 is pressed."""
+    midi.midiout.sendMessage(midi.testmessage)
     print("Button 1 pressed", pressed_buttons)
 
 
 def right(state, axis):
     """Event fired on move right."""
+    midi.midiout.sendMessage(rtmidi.MidiMessage.controllerEvent(1, 100, int(axis * 127)))
     print(f"Right: {axis}")
 
 
