@@ -1,9 +1,12 @@
 """Events fired by inputs from the 3d mouse."""
+import rtmidi
+import midi
 
 
 def button_0(state, buttons, pressed_buttons):
     """Event fired when button 0 is pressed."""
     print("Button 0 pressed:", pressed_buttons)
+    midi.midiout.sendMessage(midi.testmessage)
 
 
 def button_1(state, buttons, pressed_buttons):
