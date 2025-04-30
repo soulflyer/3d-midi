@@ -46,8 +46,11 @@ def main():
             #     print("p ", state.pitch)
             # if (state.roll != stored_state.roll):
             #     print("r ", state.roll)
-            # if (state.yaw != stored_state.yaw):
-            #     print("y ", state.yaw)
+            if (state.yaw != stored_state.yaw):
+                if (state.yaw >= 0):
+                    event.yaw_right(state.yaw)
+                if (state.y <= 0):
+                    event.yaw_left(state.yaw)
             stored_state = state
             # print(state.x, state.y, state.z, state.roll, state.pitch, state.yaw)
             time.sleep(0.01)

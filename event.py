@@ -31,27 +31,22 @@ def left(axis):
 
 def forward(axis):
     """Event fired on move forwards."""
-    print(f"Forward: {axis}")
-    message = rtmidi.MidiMessage.pitchWheel(
-        midi.channel, (8191 + (int(axis * 8192))))
-    midi.midiout.sendMessage(message)
+    #print(f"Forward: {axis}")
 
 
 def back(axis):
     """Event fired on move backwards."""
-    print(f"Back: {axis}")
-    message = rtmidi.MidiMessage.pitchWheel(
-        midi.channel, (8192 + (int(axis * 8192))))
-    midi.midiout.sendMessage(message)
+    #print(f"Back: {axis}")
+
 
 def up(axis):
     """Event fired on move up."""
-    print(f"Up: {axis}")
+    #print(f"Up: {axis}")
 
 
 def down(axis):
     """Event fired on move down."""
-    print(f"Down: {axis}")
+    #print(f"Down: {axis}")
 
 
 def roll_right(axis):
@@ -76,9 +71,11 @@ def pitch_back(axis):
 
 def yaw_right(axis):
     """Event fired on yaw right."""
-    # print(f"Yaw right: {axis}")
+    midi.pitchbend(axis)
+    print(f"Yaw right: {axis}")
 
 
 def yaw_left(axis):
     """Event fired on yaw left."""
-    # print(f"Yaw left: {axis}")
+    midi.pitchbend(axis)
+    print(f"Yaw left: {axis}")
