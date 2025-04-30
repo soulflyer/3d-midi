@@ -1,7 +1,8 @@
 import rtmidi
 midiout = rtmidi.RtMidiOut()
 ports = range(midiout.getPortCount())
-testmessage = rtmidi.MidiMessage.noteOn(1, 100, 120)
+channel = 11
+testmessage = rtmidi.MidiMessage.noteOn(channel, 100, 120)
 
 
 def output_ports():
