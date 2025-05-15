@@ -1,7 +1,6 @@
 """Events fired by inputs from the 3d mouse."""
-import rtmidi
 import midi
-import time
+import config
 
 
 def button_0(state, buttons, pressed_buttons):
@@ -16,65 +15,61 @@ def button_1(state, buttons, pressed_buttons):
     print("Button 1 pressed", pressed_buttons)
 
 
-def right(axis):
+def right(value):
     """Event fired on move right."""
-    # message = rtmidi.MidiMessage.controllerEvent(1, 100, int(axis * 127))
-    # midi.midiout.sendMessage(message)
-    # print(f"Right: {axis}")
+    midi.controller(config.right, value)
 
 
-def left(axis):
+def left(value):
     """Event fired on move left."""
-    # print(f"Left: {axis}")
+    midi.controller(config.left, value)
 
 
-def forward(axis):
+def forward(value):
     """Event fired on move forwards."""
-    # print(f"Forward: {axis}")
+    midi.controller(config.forward, value)
 
 
-def back(axis):
+def back(value):
     """Event fired on move backwards."""
-    # print(f"Back: {axis}")
+    midi.controller(config.back, value)
 
 
-def up(axis):
+def up(value):
     """Event fired on move up."""
-    # print(f"Up: {axis}")
+    midi.controller(config.up, value)
 
 
-def down(axis):
+def down(value):
     """Event fired on move down."""
-    # print(f"Down: {axis}")
+    midi.controller(config.down, value)
 
 
-def roll_right(axis):
+def roll_right(value):
     """Event fired on roll_right."""
-    print(f"Roll right: {axis}")
+    midi.controller(config.roll_right, value)
 
 
-def roll_left(axis):
+def roll_left(value):
     """Event fired on roll_left."""
-    print(f"Roll left: {axis}")
+    midi.controller(config.roll_left, value)
 
 
-def pitch_forward(axis):
+def pitch_forward(value):
     """Event fired on pitch forward."""
-    print(f"Pitch forward: {axis}")
+    midi.controller(config.pitch_forward, value)
 
 
-def pitch_back(axis):
+def pitch_back(value):
     """Event fired on pitch back."""
-    print(f"Pitch back: {axis}")
+    midi.controller(config.pitch_back, value)
 
 
-def yaw_right(axis):
+def yaw_right(value):
     """Event fired on yaw right."""
-    midi.pitchbend(axis)
-    print(f"Yaw right: {axis}")
+    midi.pitchbend(value)
 
 
-def yaw_left(axis):
+def yaw_left(value):
     """Event fired on yaw left."""
-    midi.pitchbend(axis)
-    print(f"Yaw left: {axis}")
+    midi.pitchbend(value)

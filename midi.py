@@ -1,10 +1,9 @@
 """Whatever."""
 import rtmidi
-import midi
+import config
 midiout = rtmidi.RtMidiOut()
 ports = range(midiout.getPortCount())
-channel = 11
-testmessage = rtmidi.MidiMessage.noteOn(channel, 100, 120)
+testmessage = rtmidi.MidiMessage.noteOn(config.channel, 100, 120)
 
 
 def output_ports():
@@ -27,5 +26,14 @@ def pitchbend(val):
     else:
         offset = 8192
     message = rtmidi.MidiMessage.pitchWheel(
-        midi.channel, (offset + (int(val * 8192))))
-    midi.midiout.sendMessage(message)
+        config.channel, (offset + (int(val * 8192))))
+    midiout.sendMessage(message)
+
+
+def controller(cc, val):
+    """Send cc message in range 0-127."""
+    adjusted_value = (abs(int(val * 127)))
+    print(f"CC {cc} :{adjusted_value}")
+    message = rtmidi.MidiMessage.controllerEvent(
+        config.channel, cc, adjusted_value)
+    midiout.sendMessage(message)
