@@ -2,7 +2,6 @@
 import rtmidi
 import midi
 import time
-import pyspacemouse
 
 
 def button_0(state, buttons, pressed_buttons):
@@ -31,42 +30,42 @@ def left(axis):
 
 def forward(axis):
     """Event fired on move forwards."""
-    #print(f"Forward: {axis}")
+    # print(f"Forward: {axis}")
 
 
 def back(axis):
     """Event fired on move backwards."""
-    #print(f"Back: {axis}")
+    # print(f"Back: {axis}")
 
 
 def up(axis):
     """Event fired on move up."""
-    #print(f"Up: {axis}")
+    # print(f"Up: {axis}")
 
 
 def down(axis):
     """Event fired on move down."""
-    #print(f"Down: {axis}")
+    # print(f"Down: {axis}")
 
 
 def roll_right(axis):
     """Event fired on roll_right."""
-    # print(f"Roll right: {axis}")
+    print(f"Roll right: {axis}")
 
 
 def roll_left(axis):
     """Event fired on roll_left."""
-    # print(f"Roll left: {axis}")
+    print(f"Roll left: {axis}")
 
 
 def pitch_forward(axis):
     """Event fired on pitch forward."""
-    # print(f"Pitch forward: {axis}")
+    print(f"Pitch forward: {axis}")
 
 
 def pitch_back(axis):
     """Event fired on pitch back."""
-    # print(f"Pitch back: {axis}")
+    print(f"Pitch back: {axis}")
 
 
 def yaw_right(axis):

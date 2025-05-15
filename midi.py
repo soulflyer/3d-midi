@@ -1,3 +1,4 @@
+"""Whatever."""
 import rtmidi
 import midi
 midiout = rtmidi.RtMidiOut()
@@ -20,7 +21,7 @@ def open_midiout_port():
 
 
 def pitchbend(val):
-    """Send a pitchbend message. Val is in the range -1.0 to 1.0."""
+    """Send pitchbend message in range -8192 t0 8192. Val is -1.0 to 1.0."""
     if val > 0:
         offset = 8191
     else:
