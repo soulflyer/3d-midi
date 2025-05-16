@@ -4,7 +4,8 @@ Convert 3d-spacemouse input to midi
 Kill *3dConnexionHelper* before running the python program
 
 *** Routing
- can be handled by [[http://www.subtlesoft.square7.net/MidiPipe.html][midipipe]]
+ can be handled by [[http://www.subtlesoft.square7.net/MidiPipe.html][midipipe]] The included setup file allows me to continue to use my keyboard which is connected via the mini-fuse midi input and also read the output of the 3d mouse program connected by midi over usb:
+
 [[file:images/midi-routing.png]]
 
 
