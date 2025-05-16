@@ -67,9 +67,11 @@ def pitch_back(value):
 
 def yaw_right(value):
     """Event fired on yaw right."""
-    midi.pitchbend(value)
+    # midi.pitchbend(value)
+    midi.controller(config.yaw_left, value)
 
 
 def yaw_left(value):
     """Event fired on yaw left."""
-    midi.pitchbend(value)
+    # midi.pitchbend(value)
+    midi.controller(config.yaw_right, value)

@@ -11,3 +11,5 @@ roll_right = 76
 roll_left = 77
 pitch_forward = 78
 pitch_back = 79
+yaw_left = 80
+yaw_right = 81
