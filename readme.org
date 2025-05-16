@@ -1,2 +1,18 @@
 * 3d-midi
 Convert 3d-spacemouse input to midi
+** Setup
+Kill *3dConnexionHelper* before running the python program
+
+*** Routing
+ can be handled by [[http://www.subtlesoft.square7.net/MidiPipe.html][midipipe]]
+[[file:images/midi-routing.png]]
+
+
+*** Start the 3dMouse program
+#+begin_src shell
+python 3d-midi.py
+#+end_src
+Select *midipipe input 1* in the python 3d mouse program
+
+*** Run [[https://vcvrack.com/][vcv]] 
+Use the included patch  and select *midipipe output 1* in the *midicc>cv* module.
