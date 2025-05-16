@@ -16,4 +16,4 @@ python 3d-midi.py
 Select *midipipe input 1* in the python 3d mouse program
 
 *** Run [[https://vcvrack.com/][vcv]] 
-Use the included patch  and select *midipipe output 1* in the *midicc>cv* module.
+Use the included patch  and select *midipipe output 1* in the *midicc>cv* module. This patch is based on one section of *Omri Cohen's* excellent Tangerine Dream inspired [[https://www.youtube.com/watch?v=XUzf0nazB_4][tutorial video]]
